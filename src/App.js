@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import styled from 'styled-componets';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class Cats extends Component {
+
+state = {
+ cats: [
+   {
+     name: 'Ronrom',
+     yearsOld: 3,
+     personality: 'Amigável, Extrovertido, Protetor do lar',
+   },{
+     name: 'Sprinkles',
+     yearsOld: 5,
+     personality: 'Dorminhoco, Introvertido, Carinhoso',
+   },{
+     name: 'Bola de Neve',
+     yearsOld: 6,
+     personality: 'Dócil, Meigo, Introvertido'
+   },{
+     name: 'Mintsia',
+     yearsOld: 2,
+     personality: 'Aventureira, Caçadora, Fofa'
+   },{
+     name: 'Haze',
+     yearsOld: 1,
+     personality: 'Brincalhona, Agitada, Faminta'
+   }
+ ]
 }
 
-export default App;
+  render(){
+    return(
+      <div>
+        
+        <h1>Gatos para te adotar ♡</h1>
+        {this.state.cats.map((item) => (
+          <div>
+            <h2> Nome: {item.name} </h2>
+            <h3> Idade: {item.yearsOld} </h3>
+            <h4> Personalidade: {item.personality} </h4>
+          </div>
+        )
+        )}
+
+      </div>
+    )
+  }
+}
+export default Cats
